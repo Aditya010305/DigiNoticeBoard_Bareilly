@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events – Digi Notice Board</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231e3a8a'/%3E%3Ctext x='50' y='70' font-family='Poppins' font-size='60' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #4b5e8e, #1e3a8a);
+      min-height: 100vh;
+      margin: 0;
+      transition: background 0.3s ease;
+    }
+    .dark-mode {
+      background: linear-gradient(135deg, #1f2937, #111827);
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    .dark-mode .glass {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .nav-link:hover {
+      transform: scale(1.1);
+      color: #93c5fd;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+    #mode-toggle::before {
+      content: '🌙';
+    }
+    .dark-mode #mode-toggle::before {
+      content: '☀️';
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 w-full glass z-50 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231e3a8a'/%3E%3Ctext x='50' y='70' font-family='Poppins' font-size='60' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E" alt="Logo" class="logo mr-2">
+        <div class="text-white text-xl font-semibold">Digi Notice Board</div>
+      </div>
+      <div class="flex items-center space-x-6">
+        <a href="index.html" class="text-white nav-link">Home</a>
+        <a href="announcements.html" class="text-white nav-link">Announcements</a>
+        <a href="events.html" class="text-white nav-link">Events</a>
+        <a href="lost-found.html" class="text-white nav-link">Lost & Found</a>
+        <a href="contact.html" class="text-white nav-link">Contact</a>
+        <button id="mode-toggle" class="text-white text-xl"></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Events Page -->
+  <section class="min-h-screen flex items-center py-10 md:py-12">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl text-white font-bold text-center mb-12" data-aos="fade-up">Upcoming Events</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="glass p-6 rounded-lg card" data-aos="fade-up" data-aos-delay="100">
+          <h2 class="text-xl text-white font-semibold">Bareilly Mela</h2>
+          <p class="text-white">Date: August 5, 2025</p>
+          <p class="text-white">A vibrant cultural fair at City Park showcasing local traditions.</p>
+        </div>
+        <div class="glass p-6 rounded-lg card" data-aos="fade-up" data-aos-delay="200">
+          <h2 class="text-xl text-white font-semibold">Local Arts Meetup</h2>
+          <p class="text-white">Date: August 10, 2025</p>
+          <p class="text-white">Join artists for a creative session at Bareilly Art Gallery.</p>
+        </div>
+        <div class="glass p-6 rounded-lg card" data-aos="fade-up" data-aos-delay="300">
+          <h2 class="text-xl text-white font-semibold">Community Clean-Up Drive</h2>
+          <p class="text-white">Date: August 15, 2025</p>
+          <p class="text-white">Help keep Bareilly clean at our community event.</p>
+        </div>
+        <div class="glass p-6 rounded-lg card" data-aos="fade-up" data-aos-delay="400">
+          <h2 class="text-xl text-white font-semibold">Charity Run</h2>
+          <p class="text-white">Date: August 20, 2025</p>
+          <p class="text-white">Run for a cause at the annual Bareilly charity marathon.</p>
+        </div>
+        <div class="glass p-6 rounded-lg card" data-aos="fade-up" data-aos-delay="500">
+          <h2 class="text-xl text-white font-semibold">Food Festival</h2>
+          <p class="text-white">Date: August 25, 2025</p>
+          <p class="text-white">Explore local cuisines at the Bareilly Food Fest.</p>
+        </div>
+        <div class="glass p-6 rounded-lg card" data-aos="fade-up" data-aos-delay="600">
+          <h2 class="text-xl text-white font-semibold">Tech Workshop</h2>
+          <p class="text-white">Date: August 30, 2025</p>
+          <p class="text-white">Learn coding and tech skills at our community workshop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Light/Dark Mode Toggle
+    const toggleButton = document.getElementById('mode-toggle');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    });
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+
+    // Smooth page transition
+    document.querySelectorAll('a[href$=".html"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500);
+      });
+    });
+
+    // Fade-in on page load
+    document.body.style.transition = 'opacity 0.5s ease';
+    document.body.style.opacity = 1;
+  </script>
+</body>
+</html>
